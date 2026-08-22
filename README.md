@@ -50,7 +50,9 @@
 
 ## Формирование отчета 
 pytest --alluredir=allure-results
+
 allure generate allure-results -o allure-report --clean
+
 allure open allure-report
   
 Ссылка на финальный проект https://svetlana84.yonote.ru/share/bbed7b1c-a514-441d-b872-5756e99e7203
