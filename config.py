@@ -1,0 +1,13 @@
+
+
+
+base_url = "https://web-agr.chitai-gorod.ru/web/api"
+
+TOKEN = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3ODc1ODcyOTEsImlhdCI6MTc4NzQxOTI5MSwiaXNzIjoiL2FwaS92MS9hdXRoL2Fub255bW91cyIsInN1YiI6IjVlYjg0MmNkZGNlZTY1MzA1ZmU5MjY0YWNmZjdmNjE5MDYyM2Y5NzFkZTZkNDIyNzc4ZTY5NmYwMWVmNzcxMGEiLCJ0eXBlIjoxMH0.TArf-Yod2k77Zwq7i48dMYUZZ15LsYEzZcbE_vvlqSLPjWivO3_We9Myo0wHkTTNRiKUVtEHdQ8cROilZc7dwjkjBwxNI1v9I-6bZ1T4BAouaz1o7ZE4GvrCrHxzIuAN4cfI89mIo30GnWscYsSG8ikvNHEt8pMLVRPPpO4wQQkSWRX8cKZwUezjbfl2e3kOhe05otq5BKRGIrL8tGqc252os-YRJ4gWVENR69LTMU--taVoMiYGud2FareeEaanZV72m1UtzFvPgs1PFP3ueCrCJHQd8Dt4K63dQbYbPT4BzM6jEIbvOoEHAqpZPaVepqRuE06KPOJF9Y8Utv0GZQ"
+HEADERS = {"Authorization": f"Bearer {TOKEN}"}
+
+
+# Пути к файлам
+SCREENSHOTS_DIR = "screenshots/"
+LOGS_DIR = "logs/"
+DRIVERS_DIR = "drivers/"
