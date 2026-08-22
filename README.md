@@ -17,25 +17,26 @@
 
 ## Структура проекта 
 📁 Diploma-Project/
-├── 📁 data/                   # Тестовые данные
-│   └── search_queries.py
-├── 📁 pages/                  # Page Object Model
-│   ├── __init__.py
-│   ├── catalog_page.py
-│   └── cart_page.py
-├── 📁 tests/                  # UI тесты
-│   ├── __init__.py
-│   └── test_ui.py
-├── 📁 test_API/               # API тесты
-│   ├── __init__.py
-│   └── tests_book_api.py
-├── 📁 allure-results/         # Allure отчеты
-├── 📄 conftest.py             # Фикстуры pytest
-├── 📄 pytest.ini              # Настройки pytest
-├── 📄 requirements.txt        # Зависимости
-├── 📄 config.py               # Настройки (URL, токены)
-├── 📄 .gitignore
-└── 📄 README.md
+
+    📁 data/                   # Тестовые данные
+       search_queries.py
+    📁 pages/                  # Page Object Model
+       __init__.py
+       catalog_page.py
+       cart_page.py
+    📁 tests/                  # UI тесты
+       __init__.py
+       test_ui.py 
+    📁 test_API/               # API тесты
+       __init__.py
+       tests_book_api.py
+     📁 allure-results/         # Allure отчеты
+    📄 conftest.py             # Фикстуры pytest
+    📄 pytest.ini              # Настройки pytest
+    📄 requirements.txt        # Зависимости 
+    📄 config.py               # Настройки (URL, токены)
+    📄 .gitignore
+    📄 README.md
 
 ## Установка 
  - Склонировать репозиторий 'git clone https://github.com/SvetlanaZavada/Diploma-Project.git'
