@@ -5,7 +5,7 @@
 -  [Стек](#Стек)
 -  [Структура проекта](#Структура проекта)
 -  [Установка](#Установка)
--  [Запуск тестов](#Закуск тестов )
+-  [Запуск тестов](#Запуск тестов )
 -  [Формирование отчета](#Формирование отчета)
 
 ## Стек 
@@ -17,25 +17,19 @@
 
 ## Структура проекта 
 📁 Diploma-Project/
-│
 ├── 📁 data/                   # Тестовые данные
 │   └── search_queries.py
-│
 ├── 📁 pages/                  # Page Object Model
 │   ├── __init__.py
 │   ├── catalog_page.py
 │   └── cart_page.py
-│
 ├── 📁 tests/                  # UI тесты
 │   ├── __init__.py
 │   └── test_ui.py
-│
 ├── 📁 test_API/               # API тесты
 │   ├── __init__.py
 │   └── tests_book_api.py
-│
 ├── 📁 allure-results/         # Allure отчеты
-│
 ├── 📄 conftest.py             # Фикстуры pytest
 ├── 📄 pytest.ini              # Настройки pytest
 ├── 📄 requirements.txt        # Зависимости
@@ -48,7 +42,7 @@
  - Создать и активировать виртуальное окружеие
  - Установить библиотеки 'pip install -r requirements.txt'
 
-## Заруск тестов 
+## Запуск тестов 
 Запуск ui тестов  pytest -m ui -v
 Запуск api тестов pytest -m api -v 
 Запуск всех тестов  pytest -v
