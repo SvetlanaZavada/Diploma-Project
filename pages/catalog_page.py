@@ -114,12 +114,12 @@ class CatalogPage:
         return self.driver.current_url
 
     @allure.step("Открыть страницу каталога")
-    def open_catalog_page(self):
+    def open_catalog_page(self) -> "CatalogPage":
         self.driver.get("https://www.chitai-gorod.ru/catalog/books-18030")
         return self
 
     @allure.step("ввести запрос в строку поиска")
-    def enter_query(self, query: str):
+    def enter_query(self, query: str) -> "CatalogPage":
         enter_query = self.driver.find_element(*self.SEARCH_INPUT_FIELD)
         WebDriverWait(self.driver, self.default_timeout).until(
             EC.element_to_be_clickable(self.SEARCH_INPUT_FIELD)
@@ -381,7 +381,7 @@ class CatalogPage:
         """
         try:
             # Пытаемся найти элемент с таймаутом (например, 3 секунды)
-            cart_element = WebDriverWait(self.driver, 3).until(
+            cart_element = WebDriverWait(self.driver, 5).until(
                 EC.presence_of_element_located(self.CART_INDICATOR)
             )
             # Если элемент найден - берем его текст и преобразуем в число

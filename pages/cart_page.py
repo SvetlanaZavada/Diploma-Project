@@ -18,28 +18,28 @@ class CardPage:
         ".chg-app-indicator.chg-app-indicator--m.header-controls__indicator")
     CLEAR_CARD = By.CSS_SELECTOR, "button[data-testid-button-cart='clearAll']"
     CART_ITEM = By.CSS_SELECTOR, "[data-testid-item-cart='product']"
-    BOOkS_IN_CARD = By.CLASS_NAME, "cart-item__wrapper"
+    BOOKS_IN_CARD = By.CLASS_NAME, "cart-item__wrapper"
 
-    def __init__(self, driver):
+    def __init__(self, driver) -> None:
         self.driver = driver
         self.default_timeout = 15
 
     @allure.step("Получить количество товаров в корзине")
-    def count_items_to_cart(self):
+    def count_items_to_cart(self) -> int:
         """
             Возвращает количество товаров в корзине.
             Returns:
                 int: количество элементов в корзине
             """
         # Находим все элементы в корзине
-        items = self.driver.find_elements(*self.BOOkS_IN_CARD)
+        items = self.driver.find_elements(*self.BOOKS_IN_CARD)
         WebDriverWait(self.driver, self.default_timeout).until(
-            EC.element_to_be_clickable(self.BOOkS_IN_CARD)
+            EC.element_to_be_clickable(self.BOOKS_IN_CARD)
         )
         return len(items)
 
     @allure.step("Очистить корзину")
-    def clear_cart(self):
+    def clear_cart(self) -> "CardPage":
         """
         Очищает корзину. Если корзина уже пуста - ничего не делает.
         """

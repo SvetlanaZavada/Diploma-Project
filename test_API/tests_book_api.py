@@ -10,9 +10,12 @@ from config import base_url, HEADERS
 def test_get_books():
 
     cart_url = f"{base_url}/v1/cart"
-    resp = requests.get(cart_url, headers=HEADERS)
-    assert resp.status_code == 200, f"Ошибка: {resp.status_code}"
-    cart = resp.json()["products"]
+    with allure.step("Отправить запрос на получение списка книг в корзине"):
+        resp = requests.get(cart_url, headers=HEADERS)
+    with allure.step("Проверить статус ответа"):
+        assert resp.status_code == 200, f"Ошибка: {resp.status_code}"
+    with allure.step("Проверить тело ответа"):
+        cart = resp.json()["products"]
     print(cart)
 
 
@@ -24,9 +27,10 @@ def test_add_book():
     # Данные
     url = f"{base_url}/v1/cart/product"
     product_id = 2995498
-
-    response = requests.post(url, headers=HEADERS, json={"id": product_id})
-    assert response.status_code == 200, "Ошибка запроса"
+    with allure.step("Отправить запрос на добавление книги в корзину"):
+        response = requests.post(url, headers=HEADERS, json={"id": product_id})
+    with allure.step("Проверить статус ответа"):
+        assert response.status_code == 200, "Ошибка запроса"
 
 
 @pytest.mark.api
@@ -34,9 +38,11 @@ def test_add_book():
 @allure.story("Удаление из корзины")
 def test_delete_all():
     cart_url = f"{base_url}/v1/cart"
-    response = requests.delete(
-        cart_url, headers=HEADERS, json={"deleteAll": True})
-    assert response.status_code == 204, "Ошибка очистки"
+    with allure.step("Отправить запрос на удаление книг из корзины"):
+        response = requests.delete(
+            cart_url, headers=HEADERS, json={"deleteAll": True})
+    with allure.step("Проверить статус ответа"):
+        assert response.status_code == 204, "Ошибка очистки"
 
 
 @pytest.mark.api
@@ -46,9 +52,10 @@ def test_add_error_id():
     # Данные
     url = f"{base_url}/v1/cart/product"
     product_id = 2995498867
-
-    response = requests.post(url, headers=HEADERS, json={"id": product_id})
-    assert response.status_code == 400
+    with allure.step("Отправить запрос на добавление  книги в корзину"):
+        response = requests.post(url, headers=HEADERS, json={"id": product_id})
+    with allure.step("Проверить статус ответа"):
+        assert response.status_code == 400
 
 
 @pytest.mark.api
@@ -57,5 +64,7 @@ def test_add_error_id():
 def test_add_not_authorized():
     url = f"{base_url}/v1/cart/product"
     product_id = 2995498
-    response = requests.post(url, json={"id": product_id})
-    assert response.status_code == 401
+    with allure.step("Отправить запрос на добавление  книги в корзину"):
+        response = requests.post(url, json={"id": product_id})
+    with allure.step("Проверить статус ответа"):
+        assert response.status_code == 401
